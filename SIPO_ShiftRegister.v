@@ -7,7 +7,7 @@ module SIPO_ShiftRegister(
     input Shift_Flag,
     input Reset,
     output reg [7:0] Parallel_Out
-)
+);
 
 always @(posedge CLOCK_50) begin
     casez ({Reset,Shift_Flag})

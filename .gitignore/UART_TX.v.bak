@@ -1,0 +1,60 @@
+`timescale 1ns/1ps
+
+module UART_TX(
+    input CLOCK_50,
+    input Start_Flag,
+    input Baud,
+    input [7:0] Input_Data,
+    output Serial_Data
+)
+
+reg [1:0] State;
+reg [1:0] Next_State;
+parameter sm_Stop_Bit = 2'b00;
+parameter sm_Start_Bit = 2'b01;
+parameter sm_No_Shift = 2'b10;
+parameter sm_Yes_Shift = 2'b11;
+//Shift counter
+reg [3:0] Shift_Count;
+//UART Timer
+wire UART_Timer_Reset;
+wire sm_Transition_Flag;
+UART_Timer Timer_2_17us(
+    .CLOCK_50(CLOCK_50),
+    .Reset(UART_Timer_Reset),
+    .Rollover(sm_Transition_Flag)
+)
+
+//State transition logic
+always @(posedge CLOCK_50) begin
+    State <= Next_State; //Always transition to Next State
+end
+
+//Next State logic
+always @(posedge CLOCK_50) begin
+    case(State)
+        sm_Stop_Bit: Next_State <= (Start_Flag) ? sm_Start_Bit : sm_Stop_Bit; //If start flag, start bit, else stay
+        sm_Start_Bit: Next_State <= (sm_Transition_Flag) ? sm_No_Shift : sm_Start_Bit; //If Transition Flag, No_Shift, else stay
+        sm_No_Shift: Next_State <= (sm_Transition_Flag) ? sm_Yes_Shift : sm_Start_Bit; //If Transition Flag, Yes_Shift, else stay
+        sm_Yes_Shift: Next_State <= (Shift_Count < 4'b1000) ? sm_No_Shift : sm_Stop_Bit; //If shifted <8 times, no shift, else stop bit
+    endcase
+end
+//Shift Count logic
+always @(posedge CLOCK_50) begin
+    case(State):
+        sm_Yes_Shift: Shift_Count <= Shift_Count + 1; //Increment when in shift state
+        sm_Stop_Bit: Shift_Count <= 4'b0000; //If in stop bit, shift count is zero
+        default: Shift_Count <= Shift_Count; //Else keep value
+    endcase
+end
+//Output logic
+always @(*) begin
+    case(State):
+        sm_Stop_Bit: begin
+            Serial_Data = 1'b1;
+
+        end
+        sm_Start_Bit: Serial_Data = 1'b0;
+        default: Serial_Data = 
+    endcase
+end

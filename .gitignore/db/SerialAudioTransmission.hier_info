@@ -1,0 +1,118 @@
+|SerialAudioTransmission
+CLOCK_50 => CLOCK_50.IN1
+GPIO[0] <> UART_TX:UART_TX.Serial_Data
+GPIO[1] <> <UNC>
+GPIO[2] <> <UNC>
+GPIO[3] <> <UNC>
+GPIO[4] <> <UNC>
+GPIO[5] <> <UNC>
+GPIO[6] <> <UNC>
+GPIO[7] <> <UNC>
+GPIO[8] <> <UNC>
+GPIO[9] <> <UNC>
+GPIO[10] <> <UNC>
+GPIO[11] <> <UNC>
+GPIO[12] <> <UNC>
+GPIO[13] <> <UNC>
+GPIO[14] <> <UNC>
+GPIO[15] <> <UNC>
+GPIO[16] <> <UNC>
+GPIO[17] <> <UNC>
+GPIO[18] <> <UNC>
+GPIO[19] <> <UNC>
+KEY[0] => CurrentInput.DATAIN
+KEY[1] => CurrentInput2.DATAIN
+
+
+|SerialAudioTransmission|UART_TX:UART_TX
+CLOCK_50 => CLOCK_50.IN2
+Start_Flag => Selector1.IN3
+Start_Flag => Selector0.IN1
+Input_Data[0] => Input_Data[0].IN1
+Input_Data[1] => Input_Data[1].IN1
+Input_Data[2] => Input_Data[2].IN1
+Input_Data[3] => Input_Data[3].IN1
+Input_Data[4] => Input_Data[4].IN1
+Input_Data[5] => Input_Data[5].IN1
+Input_Data[6] => Input_Data[6].IN1
+Input_Data[7] => Input_Data[7].IN1
+Load_Data => Load_Data.IN1
+Reset => Reset.IN1
+Serial_Data <= Selector7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SerialAudioTransmission|UART_TX:UART_TX|Timer_2_17us:UART_Timer
+CLOCK_50 => Count[0].CLK
+CLOCK_50 => Count[1].CLK
+CLOCK_50 => Count[2].CLK
+CLOCK_50 => Count[3].CLK
+CLOCK_50 => Count[4].CLK
+CLOCK_50 => Count[5].CLK
+CLOCK_50 => Count[6].CLK
+CLOCK_50 => Count[7].CLK
+CLOCK_50 => Count[8].CLK
+CLOCK_50 => Rollover~reg0.CLK
+Reset => Count.OUTPUTSELECT
+Reset => Count.OUTPUTSELECT
+Reset => Count.OUTPUTSELECT
+Reset => Count.OUTPUTSELECT
+Reset => Count.OUTPUTSELECT
+Reset => Count.OUTPUTSELECT
+Reset => Count.OUTPUTSELECT
+Reset => Count.OUTPUTSELECT
+Reset => Count.OUTPUTSELECT
+Rollover <= Rollover~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SerialAudioTransmission|UART_TX:UART_TX|PISO_ShiftRegister:TX_Shift_Register
+CLOCK_50 => Shift_Data[0].CLK
+CLOCK_50 => Shift_Data[1].CLK
+CLOCK_50 => Shift_Data[2].CLK
+CLOCK_50 => Shift_Data[3].CLK
+CLOCK_50 => Shift_Data[4].CLK
+CLOCK_50 => Shift_Data[5].CLK
+CLOCK_50 => Shift_Data[6].CLK
+CLOCK_50 => Shift_Data[7].CLK
+Parallel_Data[0] => Mux7.IN4
+Parallel_Data[0] => Mux7.IN5
+Parallel_Data[1] => Mux6.IN4
+Parallel_Data[1] => Mux6.IN5
+Parallel_Data[2] => Mux5.IN4
+Parallel_Data[2] => Mux5.IN5
+Parallel_Data[3] => Mux4.IN4
+Parallel_Data[3] => Mux4.IN5
+Parallel_Data[4] => Mux3.IN4
+Parallel_Data[4] => Mux3.IN5
+Parallel_Data[5] => Mux2.IN4
+Parallel_Data[5] => Mux2.IN5
+Parallel_Data[6] => Mux1.IN4
+Parallel_Data[6] => Mux1.IN5
+Parallel_Data[7] => Mux0.IN5
+Parallel_Data[7] => Mux0.IN6
+Load_Parallel_Data => Mux0.IN7
+Load_Parallel_Data => Mux1.IN6
+Load_Parallel_Data => Mux2.IN6
+Load_Parallel_Data => Mux3.IN6
+Load_Parallel_Data => Mux4.IN6
+Load_Parallel_Data => Mux5.IN6
+Load_Parallel_Data => Mux6.IN6
+Load_Parallel_Data => Mux7.IN6
+Shift_Flag => Mux0.IN8
+Shift_Flag => Mux1.IN7
+Shift_Flag => Mux2.IN7
+Shift_Flag => Mux3.IN7
+Shift_Flag => Mux4.IN7
+Shift_Flag => Mux5.IN7
+Shift_Flag => Mux6.IN7
+Shift_Flag => Mux7.IN7
+Reset => Mux0.IN9
+Reset => Mux1.IN8
+Reset => Mux2.IN8
+Reset => Mux3.IN8
+Reset => Mux4.IN8
+Reset => Mux5.IN8
+Reset => Mux6.IN8
+Reset => Mux7.IN8
+Serial_Out <= Shift_Data[0].DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,164 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/intelFPGA/18.1
+vPISO_ShiftRegister
+Z0 !s110 1749165037
+!i10b 1
+!s100 W8Fa]P0nboh?_a>O`n4:13
+I=`7WV86OINU26gjGnClmZ2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/School/Side Learning/Personal FPGA/SerialAudioTransmission/.gitignore
+w1749150980
+8D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\PISO_ShiftRegister.v
+FD:\School\Side Learning\Personal FPGA\SerialAudioTransmission\PISO_ShiftRegister.v
+L0 4
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1749165037.000000
+!s107 D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\PISO_ShiftRegister.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\PISO_ShiftRegister.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+n@p@i@s@o_@shift@register
+vSerialAudioTransmission
+R0
+!i10b 1
+!s100 b;SXgo4P16hm@D^gU@oJF1
+IgcgZ]6lWk[OE9M24>0@EI2
+R1
+R2
+w1749140025
+8D:/School/Side Learning/Personal FPGA/SerialAudioTransmission/.gitignore/SerialAudioTransmission.v
+FD:/School/Side Learning/Personal FPGA/SerialAudioTransmission/.gitignore/SerialAudioTransmission.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/School/Side Learning/Personal FPGA/SerialAudioTransmission/.gitignore/SerialAudioTransmission.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/School/Side Learning/Personal FPGA/SerialAudioTransmission/.gitignore/SerialAudioTransmission.v|
+!i113 1
+R5
+R6
+n@serial@audio@transmission
+vSIPO_ShiftRegister
+R0
+!i10b 1
+!s100 @zzTCh7GzSUX`XLC=>QGi2
+IK_hCnzB;Ib=9=Hif_J7J>0
+R1
+R2
+w1749107321
+8D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\SIPO_ShiftRegister.v
+FD:\School\Side Learning\Personal FPGA\SerialAudioTransmission\SIPO_ShiftRegister.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\SIPO_ShiftRegister.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\SIPO_ShiftRegister.v|
+!i113 1
+R5
+R6
+n@s@i@p@o_@shift@register
+vtb_PISO_ShiftRegister
+R0
+!i10b 1
+!s100 <JoP0e:0bQ_`ij?7l]hJT1
+IQzOGXWzabe8JIXKZjg8Y51
+R1
+R2
+w1749151775
+8D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\.gitignore\tb_PISO_ShiftRegister.v
+FD:\School\Side Learning\Personal FPGA\SerialAudioTransmission\.gitignore\tb_PISO_ShiftRegister.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\.gitignore\tb_PISO_ShiftRegister.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\.gitignore\tb_PISO_ShiftRegister.v|
+!i113 1
+R5
+R6
+ntb_@p@i@s@o_@shift@register
+vtb_UART_TX
+R0
+!i10b 1
+!s100 HQh9OGUc?B3P=Wd5QP2Kk0
+ImE1_JjL76^DRm>E_kzMIV3
+R1
+R2
+w1749164331
+8D:/School/Side Learning/Personal FPGA/SerialAudioTransmission/.gitignore/tb_UART_TX.v
+FD:/School/Side Learning/Personal FPGA/SerialAudioTransmission/.gitignore/tb_UART_TX.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:/School/Side Learning/Personal FPGA/SerialAudioTransmission/.gitignore/tb_UART_TX.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/School/Side Learning/Personal FPGA/SerialAudioTransmission/.gitignore/tb_UART_TX.v|
+!i113 1
+R5
+R6
+ntb_@u@a@r@t_@t@x
+vTimer_2_17us
+R0
+!i10b 1
+!s100 c4TO1bm1hWo3>YNKa9zob3
+IJ=bX[dgK=NN7D1=iH_P@]2
+R1
+R2
+w1749156965
+8D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\Timer_2_17us.v
+FD:\School\Side Learning\Personal FPGA\SerialAudioTransmission\Timer_2_17us.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\Timer_2_17us.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\Timer_2_17us.v|
+!i113 1
+R5
+R6
+n@timer_2_17us
+vUART_TX
+R0
+!i10b 1
+!s100 8nnmmf3B9?8`5Y`:ELaS<0
+IW_g0QfcSJjKFI;ln^DlD10
+R1
+R2
+w1749165033
+8D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\UART_TX.v
+FD:\School\Side Learning\Personal FPGA\SerialAudioTransmission\UART_TX.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\UART_TX.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:\School\Side Learning\Personal FPGA\SerialAudioTransmission\UART_TX.v|
+!i113 1
+R5
+R6
+n@u@a@r@t_@t@x

@@ -1,0 +1,14 @@
+
+State Machine - |SerialAudioTransmission|UART_TX:UART_TX|Next_State
+Name Next_State.sm_Yes_Shift Next_State.sm_No_Shift Next_State.sm_Start_Bit Next_State.sm_Stop_Bit 
+Next_State.sm_Stop_Bit 0 0 0 0 
+Next_State.sm_Start_Bit 0 0 1 1 
+Next_State.sm_No_Shift 0 1 0 1 
+Next_State.sm_Yes_Shift 1 0 0 1 
+
+State Machine - |SerialAudioTransmission|UART_TX:UART_TX|State
+Name State.sm_Yes_Shift State.sm_No_Shift State.sm_Start_Bit State.sm_Stop_Bit 
+State.sm_Stop_Bit 0 0 0 0 
+State.sm_Start_Bit 0 0 1 1 
+State.sm_No_Shift 0 1 0 1 
+State.sm_Yes_Shift 1 0 0 1 
