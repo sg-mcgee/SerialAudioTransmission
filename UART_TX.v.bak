@@ -7,7 +7,7 @@ module UART_TX(
     input [7:0] Input_Data,
     input Load_Data,
     input Reset,
-    output reg Serial_Data
+    output reg Serial_Data,
 );
 
 //State information
@@ -50,7 +50,7 @@ always @(*) begin
         sm_Stop_Bit: Next_State = (Start_Flag) ? sm_Start_Bit : sm_Stop_Bit; //If start flag, start bit, else stay
         sm_Start_Bit: Next_State = (sm_Transition_Flag) ? sm_No_Shift : sm_Start_Bit; //If Transition Flag, No_Shift, else stay
         sm_No_Shift: Next_State = (sm_Transition_Flag) ? sm_Yes_Shift : sm_No_Shift; //If Transition Flag, Yes_Shift, else stay
-        sm_Yes_Shift: Next_State = (Shift_Count <= 4'b1000) ? sm_No_Shift : sm_Stop_Bit; //If shifted <8 times, no shift, else stop bit
+        sm_Yes_Shift: Next_State = (Shift_Count <= 4'b1002) ? sm_No_Shift : sm_Stop_Bit; //If shifted <8 times, no shift, else stop bit
         default: Next_State = sm_Stop_Bit;
     endcase
 end
