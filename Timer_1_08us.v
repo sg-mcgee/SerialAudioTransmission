@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module Timer_2_17us(
+module Timer_1_08us(
     input CLOCK_50,
     input Reset,
     output reg Rollover
