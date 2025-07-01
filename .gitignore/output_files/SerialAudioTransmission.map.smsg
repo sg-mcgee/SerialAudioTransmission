@@ -1,1 +1,0 @@
-Warning (10268): Verilog HDL information at SerialAudioTransmission.v(15): always construct contains both blocking and non-blocking assignments File: D:/School/Side Learning/Personal FPGA/SerialAudioTransmission/.gitignore/SerialAudioTransmission.v Line: 15
