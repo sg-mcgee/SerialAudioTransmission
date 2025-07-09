@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module FallingEdgeDetector(
+module RisingEdgeDetector(
 	input Signal,
 	input CLOCK_50,
 	output reg Edge
@@ -11,6 +11,6 @@ module FallingEdgeDetector(
 	always @(posedge CLOCK_50) begin
 		CurrentInput <= Signal;
 		OneClockDelay <= CurrentInput;
-		Edge <= ((CurrentInput == 1'b0) && (OneClockDelay == 1'b1));
+		Edge <= ((CurrentInput == 1'b1) && (OneClockDelay == 1'b0));
 	end
 endmodule
