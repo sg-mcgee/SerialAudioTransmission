@@ -5,7 +5,7 @@ module UART_TX(
     input CLOCK_50,
     input Start_Flag,
     input [7:0] Input_Data,
-    input Load_Data,
+    // input Load_Data,
     input Reset,
     output reg Serial_Data
 );
@@ -31,6 +31,7 @@ Timer_2_17us UART_Timer( //This is new organization for me
 wire Load_Parallel_Data;
 reg Shift_Content_Flag;
 wire [7:0] Shift_Register_Out;
+reg Load_Data;
 PISO_ShiftRegister TX_Shift_Register(
     .CLOCK_50(CLOCK_50),
     .Parallel_Data(Input_Data),
@@ -69,26 +70,31 @@ always @(*) begin
             Serial_Data = 1'b1;
             UART_Timer_Reset = 1'b1;
             Shift_Content_Flag = 1'b0;
+            Load_Data = 1'b0;
         end
         sm_Start_Bit: begin
             Serial_Data = 1'b0;
             UART_Timer_Reset = 1'b0;
             Shift_Content_Flag = 1'b0;
+            Load_Data = 1'b1;
         end
         sm_Yes_Shift: begin
             Serial_Data = Shift_Register_Out[0];
             UART_Timer_Reset = 1'b0;
             Shift_Content_Flag = 1'b1;
+            Load_Data = 1'b0;
         end
         sm_No_Shift: begin
             Serial_Data = Shift_Register_Out[0];
             UART_Timer_Reset = 1'b0;
             Shift_Content_Flag = 1'b0;
+            Load_Data = 1'b0;
         end
         default: begin //In the event case gets out of wack (shouldn't), pull data high, keep timer on incase that fixes it, don't shift
             Serial_Data = 1'b1;
             UART_Timer_Reset = 1'b0;
             Shift_Content_Flag = 1'b0;
+            Load_Data = 1'b0;
         end
     endcase
 end
